@@ -1,3 +1,13 @@
+#me{
+color: rgba(0,0,0,0.9);
+font-size: 4.236em;
+width: 20%;
+padding-top: 208px;
+padding-bottom: 5px;
+padding-left: 0px;
+margin: 0 auto;
+}
+
 #music-list div p{
 	font-family: monospace;
 	font-size: 2.28em;
@@ -9,7 +19,10 @@
 	text-align: center;
 }
 #music-list div img{
-	width: 50%;
+	width: 40%;
+}
+.my-new-list{
+	padding: 10px 10px 10px 10px;
 }
 #pedal{
 	display: none;
@@ -18,18 +31,22 @@
 	margin: 0 auto;
 	padding: 208px 0 40px 0;
 }
-/*VUE.js*/
+.fb-share-button{
+	text-align: center;
+	margin-top: 40px;
+}
 [v-cloak] {
   display: none;
 }
+
 .fade-enter-active {
-   -webkit-transition: opacity 1s ease;
-	 -moz-transition: opacity 1s ease;
-	 -o-transition: opacity 1s ease;
-	 -ms-transition: opacity 1s ease;
-	 transition: opacityll 1s ease;
+  transition: all 1s ease;
 }
-.fade-enter
+.fade-leave-active {
+  transition: all 1s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.fade-enter, .fade-leave-to
 /* .slide-fade-leave-active for <2.1.8 */ {
+  transform: translateX(10px);
   opacity: 0;
 }

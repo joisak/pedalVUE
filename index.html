@@ -16,31 +16,57 @@
 <link href='http://fonts.googleapis.com/css?family=Cabin:400,500,600,700,400italic,500italic,600italic,700italic|Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 <link rel="stylesheet" href="pedal.css">
+<link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+<link rel="manifest" href="favicon/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
 </head>
 <body>
 	<div class="container">
-		<div class="col-md-12">
+		<a href="http://joakimisaksson.com/dots"><img id="pedal" src="pedal.gif" class="" alt="PEDALSUPERWEBPRODUKTIONPEDALSUPERWEBPRODUKTIONPEDALSUPERWEBPRODUKTIONPEDALSUPERWEBPRODUKTIONPEDALSUPERWEBPRODUKTION" style=""></a>
 			<div id="wrapper">
-		 		<a href="http://joakimisaksson.com/dots"><img id="pedal" src="pedal.gif" class="" alt="PEDALSUPERWEBPRODUKTIONPEDALSUPERWEBPRODUKTIONPEDALSUPERWEBPRODUKTIONPEDALSUPERWEBPRODUKTIONPEDALSUPERWEBPRODUKTION" style=""></a>
 				<div id="music-list">
+					<div class="col-md-6">
 					<div class="text-center" v-for="item in topTracks">
 						<p v-show="loading">"Listen to a lot of music..."</p>
-							<transition name="fade">
-								<div class="music-shit" v-if="show">
-									<img :src="item.image[3]['#text']"/>
-									<div v-cloak>
-										<p>
-											{{ item.name }}
-										</p>
-										<p>
-											{{ item.artist['#text']}}
-										</p>
-									</div>
-
-								</div>
-							</transition>
+									<transition name="fade">
+										<div class="music-shit" v-if="show">
+											<img :src="item.image[3]['#text']"/>
+											<p v-cloak>
+												{{ item.name }}<br>
+												{{ item.artist['#text']}}
+											</p>
+										</div>
+									</transition>
 					</div>
 				</div>
+				<div v-cloak class="col-md-6">
+					<button v-on:click="collapse = !collapse">Artist</button>
+
+				<div class="text-center" v-for="artist in topArtist">
+					<p v-show="loading">"Listen to a lot of music..."</p>
+								<transition name="fade">
+									<div class="music-shit" v-if="show">
+										<!-- <img :src="artist.image[3]['#text']"/> -->
+											<span v-show="collapse">{{ artist.name }}</span>
+
+									</div>
+								</transition>
+				</div>
+			</div>
 				<div class="pedal"></div>
 	 		</div>
 	 	</div>
