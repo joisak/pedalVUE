@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta property="og:title" content="Joakim PEDAL Isaksson PEDAL"/>
+<meta property="og:site_name" content="PEDAL and cool music. Skate or DIE!">
+<meta property="og:url" content="http://www.joakimisaksson.com">
+<meta property="og:description" content="uh site wif very tight content. If you wants ta contact me, contact me. aight? See you! with muh beeotch" />
+<meta property="fb:app_id" content="387998728074385" />
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="en_US" />
+<meta property="article:author" content="https://www.facebook.com/coolastejoakim" />
+<meta property="article:publisher" content="https://www.facebook.com/pedaldoingafakiebetaflip" />
+<meta proborty="og:image" content="http://www.joakimisaksson.com/jocke_flimmer_.gif"/>
+<meta http-equiv="refresh" content="300">
+<link href='http://fonts.googleapis.com/css?family=Cabin:400,500,600,700,400italic,500italic,600italic,700italic|Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="pedal.css">
+</head>
+<body>
+	<div class="container">
+		<div class="col-md-12">
+			<div id="wrapper">
+		 		<a href="http://joakimisaksson.com/dots"><img id="pedal" src="pedal.gif" class="" alt="PEDALSUPERWEBPRODUKTIONPEDALSUPERWEBPRODUKTIONPEDALSUPERWEBPRODUKTIONPEDALSUPERWEBPRODUKTIONPEDALSUPERWEBPRODUKTION" style=""></a>
+				<div id="music-list">
+					<div class="text-center" v-for="item in topTracks">
+						<p v-show="loading">"Listen to a lot of music..."</p>
+							<transition name="fade">
+								<div class="music-shit" v-if="show">
+									<img :src="item.image[3]['#text']"/>
+									<div v-cloak>
+										<p>
+											{{ item.name }}
+										</p>
+										<p>
+											{{ item.artist['#text']}}
+										</p>
+									</div>
+
+								</div>
+							</transition>
+					</div>
+				</div>
+				<div class="pedal"></div>
+	 		</div>
+	 	</div>
+	 </div>
+</body>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://unpkg.com/vue"></script>
+<script src="pedal.js"></script>
+<html>

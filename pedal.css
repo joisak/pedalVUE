@@ -1,0 +1,35 @@
+#music-list div p{
+	font-family: monospace;
+	font-size: 2.28em;
+
+}
+#music-list div p{
+	margin: 18px 0px 42px 0px;
+	letter-spacing: 2px;
+	text-align: center;
+}
+#music-list div img{
+	width: 50%;
+}
+#pedal{
+	display: none;
+	display: block;
+	text-align: center;
+	margin: 0 auto;
+	padding: 208px 0 40px 0;
+}
+/*VUE.js*/
+[v-cloak] {
+  display: none;
+}
+.fade-enter-active {
+   -webkit-transition: opacity 1s ease;
+	 -moz-transition: opacity 1s ease;
+	 -o-transition: opacity 1s ease;
+	 -ms-transition: opacity 1s ease;
+	 transition: opacityll 1s ease;
+}
+.fade-enter
+/* .slide-fade-leave-active for <2.1.8 */ {
+  opacity: 0;
+}
