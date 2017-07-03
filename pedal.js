@@ -3,32 +3,36 @@ var user = "joisak",
 new Vue({
 	el: '#music-list',
 	data: {
-		resultsTopTracks: [],
-		resultsTopArtist: [],
-		topTracks: [],
-		topArtist:[],
+		results: [],
+		resultsArtist: [],
+		topArtist: [],
+		topTracks : [],
 		loading: false,
 		show: false,
-		collapse: false
+		showArtist: false
 	},
 	created() {
 		axios.get('http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user='+user+'&api_key='+ apiKey +'&format=json')
 		.then(response => {
-			this.resultsTopTracks = response.data.recenttracks.track
+			this.results = response.data.recenttracks.track
 			for(var i = 0; i < 9; i++){
-				this.topTracks.push(this.resultsTopTracks[i]);
+				this.topTracks.push(this.results[i]);
 			}
 		});
 		axios.get('http://ws.audioscrobbler.com/2.0/?method=user.gettopartists&user='+user+'&api_key='+ apiKey +'&format=json')
 		.then(response => {
-			this.resultsTopArtist = response.data.topartists.artist
+			this.resultsArtist = response.data.topartists.artist
 			for(var i = 0; i < 9; i++){
-				this.topArtist.push(this.resultsTopArtist[i]);
+				this.topArtist.push(this.resultsArtist[i]);
 			}
 		});
-
+	},
+	methods: {
+		buttonHide: function(){
+				this.show = false;
+				this.showArtist = true;
+		}
 	},
 	updated(){
-			this.show = true;
 	}
 })

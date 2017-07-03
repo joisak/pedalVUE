@@ -36,10 +36,18 @@
 </head>
 <body>
 	<div class="container">
-		<a href="http://joakimisaksson.com/dots"><img id="pedal" src="pedal.gif" class="" alt="PEDALSUPERWEBPRODUKTIONPEDALSUPERWEBPRODUKTIONPEDALSUPERWEBPRODUKTIONPEDALSUPERWEBPRODUKTIONPEDALSUPERWEBPRODUKTION" style=""></a>
+		<div class="col-md-12">
 			<div id="wrapper">
+		 		<a href="http://joakimisaksson.com/dots"><img id="pedal" src="pedal.gif" class="" alt="PEDALSUPERWEBPRODUKTIONPEDALSUPERWEBPRODUKTIONPEDALSUPERWEBPRODUKTIONPEDALSUPERWEBPRODUKTIONPEDALSUPERWEBPRODUKTION" style=""></a>
 				<div id="music-list">
-					<div class="col-md-6">
+					<div class="text-center">
+					<a v-on:click="show = !show">
+						Latest Tracks
+					</a>
+					<a v-on:click="buttonHide()">
+						Top Artist
+					</a>
+					</div>
 					<div class="text-center" v-for="item in topTracks">
 						<p v-show="loading">"Listen to a lot of music..."</p>
 									<transition name="fade">
@@ -47,26 +55,23 @@
 											<img :src="item.image[3]['#text']"/>
 											<p v-cloak>
 												{{ item.name }}<br>
-												{{ item.artist['#text']}}
+												<b>{{ item.artist['#text']}}<b>
+											</p>
+										</div>
+									</transition>
+					</div>
+					<div class="text-center" v-for="artist in topArtist">
+						<p v-show="loading">"Listen to a lot of music..."</p>
+									<transition name="fade">
+										<div class="music-shit"  v-if="showArtist">
+											<img :src="artist.image[3]['#text']"/>
+											<p v-cloak>
+												{{ artist.name }}
 											</p>
 										</div>
 									</transition>
 					</div>
 				</div>
-				<div v-cloak class="col-md-6">
-					<button v-on:click="collapse = !collapse">Artist</button>
-
-				<div class="text-center" v-for="artist in topArtist">
-					<p v-show="loading">"Listen to a lot of music..."</p>
-								<transition name="fade">
-									<div class="music-shit" v-if="show">
-										<!-- <img :src="artist.image[3]['#text']"/> -->
-											<span v-show="collapse">{{ artist.name }}</span>
-
-									</div>
-								</transition>
-				</div>
-			</div>
 				<div class="pedal"></div>
 	 		</div>
 	 	</div>
