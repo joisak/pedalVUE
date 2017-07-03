@@ -28,9 +28,13 @@ new Vue({
 		});
 	},
 	methods: {
-		buttonHide: function(){
-				this.show = false;
-				this.showArtist = true;
+		buttonArtist: function(){
+					this.show = false;
+					this.showArtist = true;
+		},
+		buttonTracks: function(){
+					this.showArtist = false;
+					this.show = true;
 		}
 	},
 	updated(){

@@ -41,15 +41,14 @@
 		 		<a href="http://joakimisaksson.com/dots"><img id="pedal" src="pedal.gif" class="" alt="PEDALSUPERWEBPRODUKTIONPEDALSUPERWEBPRODUKTIONPEDALSUPERWEBPRODUKTIONPEDALSUPERWEBPRODUKTIONPEDALSUPERWEBPRODUKTION" style=""></a>
 				<div id="music-list">
 					<div class="text-center">
-					<a v-on:click="show = !show">
+					<a class="btn btn-list-tracks" v-on:click="buttonTracks()">
 						Latest Tracks
 					</a>
-					<a v-on:click="buttonHide()">
+					<a class="btn btn-list-artist" v-on:click="buttonArtist()">
 						Top Artist
 					</a>
 					</div>
 					<div class="text-center" v-for="item in topTracks">
-						<p v-show="loading">"Listen to a lot of music..."</p>
 									<transition name="fade">
 										<div class="music-shit" v-if="show">
 											<img :src="item.image[3]['#text']"/>
