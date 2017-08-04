@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta property="og:title" content="Joakim PEDAL Isaksson PEDAL"/>
+<meta property="og:site_name" content="PEDAL and cool music. Skate or DIE!">
+<meta property="og:url" content="http://www.joakimisaksson.com">
+<meta property="og:description" content="uh site wif very tight content. If you wants ta contact me, contact me. aight? See you! with muh beeotch" />
+<meta property="fb:app_id" content="387998728074385" />
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="en_US" />
+<meta property="article:author" content="https://www.facebook.com/coolastejoakim" />
+<meta property="article:publisher" content="https://www.facebook.com/pedaldoingafakiebetaflip" />
+<meta proborty="og:image" content="http://www.joakimisaksson.com/jocke_flimmer_.gif"/>
+<meta http-equiv="refresh" content="300">
+<link href='http://fonts.googleapis.com/css?family=Cabin:400,500,600,700,400italic,500italic,600italic,700italic|Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<style>
+#me{
+color: rgba(0,0,0,0.9);
+font-size: 4.236em;
+width: 20%;
+padding-top: 208px;
+padding-bottom: 5px;
+padding-left: 0px;
+margin: 0 auto;
+}
+.music-list{
+	font-family: monospace;
+	font-size: 2.28em;
+	display: none;
+
+}
+.music-list p{
+	margin: 18px 0px 42px 0px;
+	letter-spacing: 2px;
+	text-align: center;
+}
+.music-list img{
+	width: 50%;
+	padding: 0px 0px 0px 0px;
+	margin: 0 auto;
+}
+.my-new-list{
+	padding: 10px 10px 10px 10px;
+}
+#pedal{
+	display: none;
+	display: block;
+	text-align: center;
+	margin: 0 auto;
+	padding: 208px 0 40px 0;
+}
+.fb-share-button{
+	text-align: center;
+	margin-top: 40px;
+}
+
+</style>
+
+
+
+</head>
+<body>
+	<div class="container">
+		<div class="col-md-12">
+			<div id="wrapper">
+		 		<a href="http://joakimisaksson.com/dots"><img id="pedal" src="pedal.gif" class="" alt="PEDALSUPERWEBPRODUKTIONPEDALSUPERWEBPRODUKTIONPEDALSUPERWEBPRODUKTIONPEDALSUPERWEBPRODUKTIONPEDALSUPERWEBPRODUKTION" style=""></a>
+	 		</div>
+	 	</div>
+	 </div>
+	<div class="music-list"></div>
+	<div class="pedal"></div>
+</body>
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+
+<script>
+$(document).ready(function(){
+		var user = "joisak",
+			  apiKey = "2716701230e056321ef598407d964f0b";
+
+		console.log("You're an onion!");
+
+		$.getJSON('http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user='+user+'&api_key='+ apiKey +'&format=json', function(data) {
+	    var items = [];
+	    $.each(data, function(key, val) {
+	    	var trackInfo = val.track;
+
+	    	for( i = 0 ; i < 20; i++)
+	    	{
+	   			items.push('<a href=' + trackInfo[i].url + '><img class="img-responsive" src='+ trackInfo[i].image[3]["#text"] +'></a><p id="' + key + '">' + trackInfo[i].name + ' - '+ trackInfo[i].artist["#text"]+' 	</p>');
+	  		}
+
+	    });
+	    $("#pedal, .music-list").fadeIn('slow');
+
+	    $('<p/>', {
+	      'class': 'my-new-list',
+	      html: items.join('')
+	    }).appendTo('.music-list');
+	});
+});
+</script>
+<html>

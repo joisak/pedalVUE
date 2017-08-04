@@ -33,6 +33,7 @@
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
+<meta name="description" content="JoakimPEDALIsakssonPEDALJoakimPEDALisaksson">
 </head>
 <body>
 	<div class="container">
@@ -40,32 +41,14 @@
 			<div id="wrapper">
 		 		<a href="http://joakimisaksson.com/dots"><img id="pedal" src="pedal.gif" class="" alt="PEDALSUPERWEBPRODUKTIONPEDALSUPERWEBPRODUKTIONPEDALSUPERWEBPRODUKTIONPEDALSUPERWEBPRODUKTIONPEDALSUPERWEBPRODUKTION" style=""></a>
 				<div id="music-list">
-					<div class="text-center">
-					<a class="btn btn-list-tracks" v-on:click="buttonTracks()">
-						Latest Tracks
-					</a>
-					<a class="btn btn-list-artist" v-on:click="buttonArtist()">
-						Top Artist
-					</a>
-					</div>
 					<div class="text-center" v-for="item in topTracks">
+						<p v-show="loading">"Listen to a lot of music..."</p>
 									<transition name="fade">
 										<div class="music-shit" v-if="show">
 											<img :src="item.image[3]['#text']"/>
 											<p v-cloak>
 												{{ item.name }}<br>
-												<b>{{ item.artist['#text']}}<b>
-											</p>
-										</div>
-									</transition>
-					</div>
-					<div class="text-center" v-for="artist in topArtist">
-						<p v-show="loading">"Listen to a lot of music..."</p>
-									<transition name="fade">
-										<div class="music-shit"  v-if="showArtist">
-											<img :src="artist.image[3]['#text']"/>
-											<p v-cloak>
-												{{ artist.name }}
+												<b>{{ item.artist['#text']}}</b>
 											</p>
 										</div>
 									</transition>
