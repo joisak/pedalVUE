@@ -39,14 +39,20 @@ margin: 0 auto;
   display: none;
 }
 
-.fade-enter-active {
+.slide-enter-active {
   transition: all 1s ease;
 }
-.fade-leave-active {
-  transition: all 1s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+.slide-leave-active {
+  transition: all 0.1s cubic-bezier(1.0, 0.5, 0.8, 1.0);
 }
-.fade-enter, .fade-leave-to
+.slide-enter
 /* .slide-fade-leave-active for <2.1.8 */ {
   transform: translateX(10px);
   opacity: 0;
+}
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0
 }

@@ -41,19 +41,11 @@
 			<div id="wrapper">
 		 		<a href="http://joakimisaksson.com/dots"><img id="pedal" src="pedal.gif" class="" alt="PEDALSUPERWEBPRODUKTIONPEDALSUPERWEBPRODUKTIONPEDALSUPERWEBPRODUKTIONPEDALSUPERWEBPRODUKTIONPEDALSUPERWEBPRODUKTION" style=""></a>
 				<div id="music-list">
-					<div class="text-center" v-for="item in topTracks">
-						<p v-show="loading">"Listen to a lot of music..."</p>
-									<transition name="fade">
-										<div class="music-shit" v-if="show">
-											<img :src="item.image[3]['#text']"/>
-											<p v-cloak>
-												{{ item.name }}<br>
-												<b>{{ item.artist['#text']}}</b>
-											</p>
-										</div>
-									</transition>
+					<router-link to="/foo">Go to Foo</router-link>
+					<router-link to="/bar">Go to Bar</router-link>
+					<router-view></router-view>
+					<div>
 					</div>
-				</div>
 				<div class="pedal"></div>
 	 		</div>
 	 	</div>
@@ -61,5 +53,8 @@
 </body>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="https://unpkg.com/vue"></script>
+<script src="https://unpkg.com/vue-router@2.7.0/dist/vue-router.js"></script>
+
+<script src=""></script>
 <script src="pedal.js"></script>
 <html>
