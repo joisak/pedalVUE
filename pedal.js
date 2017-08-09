@@ -45,12 +45,12 @@ const Me = {
   template: `
 		<transition name="fade">
 			<div class="text-center">
-				<img src="me.jpg" class="me-img">
-				<span>
+				<img src="me_zoom.gif" class="me-img">
+				<p>
 					Web enthusiast with a passion to develop and design web pages. My expertise consists of the combination of editorial work, design and programming.  I am a cheerful, sociable and cool person with an interest in communication.
-					If you would like more information or to discuss commissions and collaborations, please get in touch.
-					Joakim Isaksson Göteborg
-				</span>
+					If you would like more information or to discuss commissions and collaborations, please <a href="">get in touch.</a>
+					<p><span>Joakim Isaksson - Göteborg</span></p>
+				</p>
 			</div>
 		</transition>
 	`,
@@ -65,14 +65,14 @@ const Me = {
 
 Vue.component('links', {
 	template: `
-		<div>
+		<div v-cloak class="text-center links">
 			<transition name="fade">
 			<div v-if="show">
 						<div v-if="tracks" v-on:click="changeLink">
-							<router-link to="/me">ME</router-link>
+							<router-link to="/me">MOI</router-link>
 						</div>
 						<div v-if="!tracks" v-on:click="changeLink">
-								<router-link v-on:click="changeLink" to="/">Tracks</router-link>
+								<router-link v-on:click="changeLink" to="/"><span class="back-link">back</span></router-link>
 						</div>
 					</transition-group>
 			</div>
