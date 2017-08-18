@@ -1,5 +1,5 @@
 #me{
-	padding-top:190px;
+	padding-top:80px;
 }
 
 #music-list div p{
@@ -18,15 +18,23 @@
 .my-new-list{
 	padding: 10px 10px 10px 10px;
 }
-html #pedal{
-	display: none;
+#pedal{
+	text-align: center;
+	margin: 0 auto;
+	font-family: 'Press Start 2P', cursive;
+	letter-spacing: 4px;
+	padding-top: 190px;
+	padding-bottom: 40px;
+}
+#moi{
 	display: block;
 	text-align: center;
 	margin: 0 auto;
-	padding: 190px 0 40px 0;
 	font-family: 'Press Start 2P', cursive;
-	font-size: 72px;
 	letter-spacing: 4px;
+	padding-top: 80px;
+	padding-bottom: 40px;
+	color:#66d99b;
 }
 html a, html a:visited{
 	font-size: 48px;
@@ -40,6 +48,14 @@ html a:hover{
 }
 html h1{
 	font-size: 72px;
+}
+html .small-text{
+	font-size: 38px;
+	padding-bottom: 94px !important;
+}
+html .normal-text{
+	font-size: 72px;
+	padding-bottom: 46px !important;
 }
 .back-link{
 	color: #ffcc76;

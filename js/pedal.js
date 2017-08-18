@@ -42,23 +42,31 @@ const Tracks = {
   updated() {
     this.show = true;
   },
-	mounted(){
-		var pedal = document.getElementById('pedal');
-		var colors = ['#ffcc76','#66d99b', '#000'];
-		var names = ['PEDAL','pedal','ladep','Joisaks RadioMAX', 'pEdaL','PeDaL','SUPER WEB PRODUCTION','**PEDAL**','//**---->PEDAL', 'PEDAL<----**///','snopp :)'];
-		setInterval(function(){
-			var randColor = colors[Math.floor(Math.random() * colors.length)];
-			var randHead = names[Math.floor(Math.random() * names.length)];
-			pedal.style.color = randColor;
-			pedal.innerText = randHead;
-		}, 2000);
-	}
+  mounted() {
+    var pedal = document.getElementById('pedal');
+    var colors = ['#ffcc76', '#66d99b', '#000'];
+    var names = ['PEDAL', 'pedal', 'ladep', 'Joisaks RadioMAX', 'pEdaL', 'PeDaL', 'SUPER WEB PRODUCTION', '**PEDAL**', '//**---->PEDAL', 'PEDAL<----**///', 'snopp :)'];
+    setInterval(function() {
+      var randColor = colors[Math.floor(Math.random() * colors.length)];
+      var randHead = names[Math.floor(Math.random() * names.length)];
+      if (randHead.length > 10) {
+        pedal.className = "small-text";
+      } else {
+        pedal.className = "normal-text";
+      }
+      pedal.style.color = randColor;
+      pedal.innerText = randHead;
+    }, 2000);
+  }
 };
 
 const Me = {
   template: `
 		<transition name="fade">
 			<div class="text-center" id="me" v-if="show">
+      <div id="moi" class="text-center">
+        <h1>MOI</h1>
+      </div>
 				<img src="img/me_zoom_.gif" class="me-img">
 				<p>
 					Web enthusiast with a passion to develop and design web pages. My expertise consists of the combination of editorial work, design and programming.  I am a cheerful, sociable and cool person with an interest in communication.
@@ -73,13 +81,13 @@ const Me = {
       show: false,
     }
   },
-	mounted() {
-		this.show = true
-	}
+  mounted() {
+    this.show = true
+  }
 }
 
 Vue.component('links', {
-	template: `
+  template: `
 		<div v-cloak class="text-center links">
 			<transition name="fade">
 			<div v-if="show">
@@ -94,22 +102,22 @@ Vue.component('links', {
 			</transition>
 		</div>
 	`,
-	data(){
-		return {
-			show: false,
-			tracks: true
-		}
-	},
-	methods: {
-		changeLink: function(){
-			this.tracks = (this.tracks) ? this.tracks = false : this.tracks = true;
-		}
-	},
-	mounted() {
-		this.show = true;
-		this.tracks = (window.location.hash == '#/') ? this.tracks = true : this.tracks = false;
-
-	}
+  data() {
+    return {
+      show: false,
+      tracks: true
+    }
+  },
+  methods: {
+    changeLink: function() {
+      this.tracks = (this.tracks) ? this.tracks = false : this.tracks = true;
+      window.scrollTo(0, 0);
+    }
+  },
+  mounted() {
+    this.show = true;
+    this.tracks = (window.location.hash == '#/') ? this.tracks = true : this.tracks = false;
+  }
 
 });
 
